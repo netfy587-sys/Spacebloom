@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Spacebloom – Stories from the sky and the garden</title>
+<meta name="description" content="Spacebloom publishes original, easy-to-read articles on space, science, nature and curious everyday wonders.">
+<link rel="canonical" href="https://www.yourdomain.com/">
+<meta property="og:title" content="Spacebloom">
+<meta property="og:description" content="Original articles on space, science, nature and everyday wonders.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- GOOGLE ADSENSE: paste your own code here after approval.
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+
+<style>
+:root{
+  --bg:#fbf8ff; --ink:#22143f; --muted:#5f5578; --card:#ffffff; --line:#e6ddf5;
+  --night:#22143f; --night-ink:#f6f0ff; --bloom:#e8457f; --nebula:#6b4cf0; --dust:#f7b955; --tint:#f1eafd;
+  --head:'Syne','Trebuchet MS',Arial,sans-serif;
+  --body:'Nunito Sans','Segoe UI',Arial,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#140b29; --ink:#f1eaff; --muted:#b4a8d2; --card:#1e1239; --line:#33254f;
+    --night:#0d0620; --night-ink:#f6f0ff; --bloom:#ff7aa8; --nebula:#9d86ff; --dust:#f7b955; --tint:#251847;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#140b29; --ink:#f1eaff; --muted:#b4a8d2; --card:#1e1239; --line:#33254f;
+  --night:#0d0620; --night-ink:#f6f0ff; --bloom:#ff7aa8; --nebula:#9d86ff; --dust:#f7b955; --tint:#251847;
+  color-scheme:dark;
+}
+html{scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.05rem;line-height:1.7}
+a{color:var(--nebula)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--dust);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--head);line-height:1.12;margin:0 0 .5em}
+.wrap{max-width:1120px;margin:0 auto;padding:0 1.25rem}
+
+/* Masthead: centred brand, nav underneath */
+.mast{background:var(--night);color:var(--night-ink);padding-top:env(safe-area-inset-top,0px)}
+.mast .wrap{text-align:center;padding-top:1.4rem;padding-bottom:1rem}
+.brand{display:inline-flex;align-items:center;gap:.6rem;color:var(--night-ink);text-decoration:none;font-family:var(--head);font-weight:800;font-size:1.9rem}
+.brand svg{width:38px;height:38px}
+.mast nav ul{display:flex;justify-content:center;flex-wrap:wrap;gap:.4rem 1.4rem;list-style:none;margin:.7rem 0 0;padding:0;font-family:var(--head);font-weight:600;font-size:.95rem}
+.mast nav a{color:var(--night-ink);text-decoration:none;opacity:.85;padding:.2rem 0;border-bottom:2px solid transparent}
+.mast nav a:hover{opacity:1;border-color:var(--bloom)}
+
+/* Hero */
+.hero{background:var(--night);color:var(--night-ink);text-align:center;padding:2.5rem 0 4.5rem;position:relative;overflow:hidden}
+.hero .art{position:absolute;left:50%;top:50%;width:min(620px,130vw);transform:translate(-50%,-50%);opacity:.22;pointer-events:none}
+.hero .wrap{position:relative}
+.hero h1{font-size:clamp(2.3rem,6vw,4.2rem);font-weight:800;max-width:16ch;margin:0 auto .45em}
+.hero p{max-width:56ch;margin:0 auto 1.5rem;color:#d9cdf3}
+.btn{display:inline-block;background:var(--bloom);color:#fff;font-family:var(--head);font-weight:700;text-decoration:none;padding:.8rem 1.6rem;border-radius:12px 4px 12px 4px}
+.btn:hover{filter:brightness(1.08)}
+.petal{fill:var(--bloom)} .petal2{fill:var(--nebula)} .centre{fill:var(--dust)}
+@media (prefers-reduced-motion:no-preference){.hero .art g{transform-origin:150px 150px;animation:turn 60s linear infinite}}
+@keyframes turn{to{transform:rotate(360deg)}}
+
+/* Topic chips */
+.chips{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;margin:-1.6rem auto 0;position:relative;padding:0 1rem}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:.45rem 1.1rem;font-family:var(--head);font-weight:600;font-size:.92rem;color:var(--ink);box-shadow:0 4px 14px rgba(34,20,63,.12)}
+
+section{padding:2.2rem 0}
+.sec-title{font-size:1.7rem;margin-bottom:1.2rem}
+
+/* Ads */
+.ad-slot{margin:1.6rem 0;text-align:center}
+.ad-slot small{display:block;font-family:var(--head);font-size:.72rem;color:var(--muted);margin-bottom:.3rem}
+.ad-box{min-height:100px;border:1px dashed var(--line);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.85rem;font-family:var(--head)}
+
+/* Lead story */
+.lead{display:grid;grid-template-columns:1fr 1fr;border-radius:20px;overflow:hidden;background:var(--card);border:1px solid var(--line);margin-bottom:2rem}
+.lead .vis{background:linear-gradient(140deg,var(--nebula),var(--bloom));min-height:260px;display:flex;align-items:center;justify-content:center}
+.lead .vis svg{width:140px;height:140px}
+.lead .txt{padding:2rem}
+.lead h3{font-size:1.9rem}
+.lead h3 a,.card h3 a{color:var(--ink);text-decoration:none}
+.lead h3 a:hover,.card h3 a:hover{color:var(--bloom)}
+.kicker{font-family:var(--head);font-weight:700;font-size:.85rem;color:var(--bloom)}
+.meta{font-size:.88rem;color:var(--muted);margin:0 0 .6rem}
+
+/* Card grid */
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.4rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:6px 22px 6px 22px;padding:1.4rem 1.4rem 1.2rem}
+.card h3{font-size:1.2rem}
+.card p{margin:.3rem 0 .8rem;font-size:.98rem}
+.card .more{font-family:var(--head);font-weight:700;font-size:.9rem}
+.card:nth-child(3n+2){background:var(--tint)}
+
+/* Two-up info */
+.info{display:grid;grid-template-columns:1fr 1.3fr;gap:2.5rem;align-items:start}
+.info p{margin:.4rem 0 .8rem}
+.disclaimer{background:var(--card);border:1px solid var(--line);border-top:6px solid var(--dust);border-radius:14px;padding:1.4rem 1.6rem}
+.disclaimer h3{font-size:1.02rem;margin:1rem 0 .2rem}
+.disclaimer h3:first-of-type{margin-top:0}
+.disclaimer p{margin:.1rem 0 .5rem;font-size:.98rem}
+
+/* Footer */
+footer{background:var(--night);color:var(--night-ink);padding:2.2rem 0 2.6rem;margin-top:2rem;font-size:.95rem}
+footer a{color:var(--night-ink)}
+.foot{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:1.6rem}
+footer h3{font-size:1rem;margin-bottom:.5rem}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{margin:.25rem 0}
+.copy{margin-top:1.6rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.18);color:#cbbfe6;font-size:.88rem}
+
+/* Consent */
+#consent{position:fixed;left:1rem;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));max-width:620px;margin:0 auto;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:1rem 1.2rem;box-shadow:0 8px 30px rgba(0,0,0,.25);display:none;z-index:30;font-size:.95rem;line-height:1.5}
+#consent.show{display:block}
+#consent button{margin-top:.7rem;border:0;cursor:pointer;font-size:.95rem}
+
+@media (max-width:860px){
+  .lead,.info{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr 1fr}
+  .foot{grid-template-columns:1fr}
+}
+@media (max-width:560px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="wrap">
+    <a class="brand" href="spacebloom.html" aria-label="Spacebloom home">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><g transform="translate(20 20)"><ellipse rx="5" ry="12" cy="-9" fill="#e8457f"/><ellipse rx="5" ry="12" cy="-9" fill="#6b4cf0" transform="rotate(72)"/><ellipse rx="5" ry="12" cy="-9" fill="#e8457f" transform="rotate(144)"/><ellipse rx="5" ry="12" cy="-9" fill="#6b4cf0" transform="rotate(216)"/><ellipse rx="5" ry="12" cy="-9" fill="#e8457f" transform="rotate(288)"/><circle r="5" fill="#f7b955"/></g></svg>
+      Spacebloom
+    </a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="spacebloom.html">Home</a></li>
+        <li><a href="#stories">Stories</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#disclaimer">Disclaimer</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <svg class="art" viewBox="0 0 300 300" aria-hidden="true"><g><ellipse class="petal" cx="150" cy="75" rx="26" ry="62"/><ellipse class="petal2" cx="150" cy="75" rx="26" ry="62" transform="rotate(60 150 150)"/><ellipse class="petal" cx="150" cy="75" rx="26" ry="62" transform="rotate(120 150 150)"/><ellipse class="petal2" cx="150" cy="75" rx="26" ry="62" transform="rotate(180 150 150)"/><ellipse class="petal" cx="150" cy="75" rx="26" ry="62" transform="rotate(240 150 150)"/><ellipse class="petal2" cx="150" cy="75" rx="26" ry="62" transform="rotate(300 150 150)"/></g><circle class="centre" cx="150" cy="150" r="22"/></svg>
+    <div class="wrap">
+      <h1>Where the cosmos meets the garden.</h1>
+      <p>Spacebloom shares original, easy-to-follow stories about space, science and the natural world. Curious about the night sky or the plant on your windowsill? Start here.</p>
+      <a class="btn" href="#stories">Explore the stories</a>
+    </div>
+  </div>
+
+  <div class="chips" aria-label="Topics">
+    <span class="chip">Space</span><span class="chip">Science</span><span class="chip">Nature</span><span class="chip">Gardening</span><span class="chip">Stargazing</span>
+  </div>
+
+  <div class="wrap">
+    <!-- Ad slot 1: top banner -->
+    <div class="ad-slot" aria-label="Advertisement">
+      <small>Advertisement</small>
+      <div class="ad-box">Ad space</div>
+    </div>
+
+    <section id="stories">
+      <h2 class="sec-title">Fresh from Spacebloom</h2>
+
+      <article class="lead">
+        <div class="vis" aria-hidden="true">
+          <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="30" fill="#f7b955"/><circle cx="62" cy="42" r="30" fill="#6b4cf0" opacity=".85"/></svg>
+        </div>
+        <div class="txt">
+          <span class="kicker">Stargazing</span>
+          <h3><a href="#">How to start stargazing from a city balcony</a></h3>
+          <p class="meta">By the Spacebloom Team · 8 min read</p>
+          <p>City lights hide the faintest stars, but they cannot hide the Moon, bright planets or the major constellations. This beginner’s guide explains when to look, how to let your eyes adjust and which free apps help you name what you see.</p>
+          <a class="btn" href="#">Read the guide</a>
+        </div>
+      </article>
+
+      <div class="grid">
+        <article class="card">
+          <span class="kicker">Space</span>
+          <h3><a href="#">Why the Moon looks bigger near the horizon</a></h3>
+          <p class="meta">6 min read</p>
+          <p>It is an illusion created by your brain, not by the Moon itself. Learn the simple trick that proves it.</p>
+          <a class="more" href="#">Continue reading</a>
+        </article>
+        <article class="card">
+          <span class="kicker">Nature</span>
+          <h3><a href="#">Do flowers really follow the Sun?</a></h3>
+          <p class="meta">5 min read</p>
+          <p>Young sunflowers do, and they use an internal clock to do it. Here is how the movement works and why it stops.</p>
+          <a class="more" href="#">Continue reading</a>
+        </article>
+        <article class="card">
+          <span class="kicker">Science</span>
+          <h3><a href="#">Black holes explained without the maths</a></h3>
+          <p class="meta">9 min read</p>
+          <p>What actually happens at the edge of a black hole, and why scientists can still study something they cannot see.</p>
+          <a class="more" href="#">Continue reading</a>
+        </article>
+
+        <!-- In-grid ad slot can go between rows -->
+
+        <article class="card">
+          <span class="kicker">Gardening</span>
+          <h3><a href="#">Five herbs you can grow on a small balcony</a></h3>
+          <p class="meta">7 min read</p>
+          <p>Mint, coriander, basil and more: what light, soil and watering each one needs to stay healthy.</p>
+          <a class="more" href="#">Continue reading</a>
+        </article>
+        <article class="card">
+          <span class="kicker">Space</span>
+          <h3><a href="#">A simple guide to watching a meteor shower</a></h3>
+          <p class="meta">6 min read</p>
+          <p>When to go out, where to look and how long to wait. No telescope needed, just patience and a dark spot.</p>
+          <a class="more" href="#">Continue reading</a>
+        </article>
+        <article class="card">
+          <span class="kicker">Nature</span>
+          <h3><a href="#">Why night-blooming flowers open after sunset</a></h3>
+          <p class="meta">5 min read</p>
+          <p>Some plants save their scent for the dark so that moths can find them. A closer look at nature’s night shift.</p>
+          <a class="more" href="#">Continue reading</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Ad slot 2: mid-page -->
+    <div class="ad-slot" aria-label="Advertisement">
+      <small>Advertisement</small>
+      <div class="ad-box">Ad space</div>
+    </div>
+
+    <section class="info">
+      <div id="about">
+        <h2 class="sec-title">About Spacebloom</h2>
+        <p>Spacebloom is an independent blog for curious people. We write every article ourselves, check our facts against trusted sources and update posts when new discoveries are made.</p>
+        <p>The site is supported by advertising, which keeps all of our stories free to read. Ads never influence what we publish.</p>
+        <p>Write to us at <a href="mailto:contact@yourdomain.com">contact@yourdomain.com</a>.</p>
+      </div>
+
+      <div id="disclaimer">
+        <h2 class="sec-title">Disclaimer</h2>
+        <div class="disclaimer" role="note">
+          <h3>General information only</h3>
+          <p>Content on Spacebloom is shared for general information and education. We work to keep it accurate and current, but we cannot guarantee that it is complete or error-free.</p>
+          <h3>Not professional advice</h3>
+          <p>Our articles are not medical, legal, financial or other professional advice. Gardening and observing tips are suggestions only; please take sensible safety precautions, and never look directly at the Sun.</p>
+          <h3>Advertising</h3>
+          <p>Spacebloom shows ads served by Google AdSense and possibly other partners, who may use cookies to personalise ads based on your visits to this and other sites. See our <a href="privacy.html">Privacy Policy</a> for details. Ads are not endorsements.</p>
+          <h3>External links</h3>
+          <p>We may link to other websites. We are not responsible for their content or privacy practices.</p>
+          <h3>Updates</h3>
+          <p>This disclaimer may change at any time. Using this site means you accept our <a href="terms.html">Terms and Conditions</a>.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <h3>Spacebloom</h3>
+        <p>Original stories on space, science and nature, written for curious minds.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="spacebloom.html">Home</a></li>
+          <li><a href="#stories">Stories</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms and Conditions</a></li>
+          <li><a href="#disclaimer">Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">© <span id="yr">2026</span> Spacebloom. All rights reserved.</div>
+  </div>
+</footer>
+
+<div id="consent" role="dialog" aria-live="polite" aria-label="Cookie notice">
+  We use cookies to run this site and to show ads. By continuing, you agree to our <a href="privacy.html">Privacy Policy</a>.
+  <br><button class="btn" id="consent-ok" type="button">Got it</button>
+</div>
+
+<script>
+(function(){
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var box = document.getElementById('consent'), ok = false;
+  try { ok = localStorage.getItem('spacebloom-consent') === '1'; } catch(e) {}
+  if(!ok) box.classList.add('show');
+  document.getElementById('consent-ok').addEventListener('click', function(){
+    box.classList.remove('show');
+    try { localStorage.setItem('spacebloom-consent','1'); } catch(e) {}
+  });
+})();
+</script>
+</body>
+</html>
